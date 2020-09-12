@@ -29,14 +29,23 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+--- First setup a constructor with super using `constructor() super()`
+--- Second setup state `this` keyword into a single object using `this.state={}`
 
 2. Describe the different phases of the component lifecycle.
+--- React Lifecycle has 3 phases which tells us how our components work in the backend.
+  * The Birth/Mounting Phase - this is when you build your components from the very beginning and setting all the initial state needed in your app.
+  * The Growth/Update Phase - this is you start making changes to your state components so it can accurately render.
+  * The Death/Un-mounting Phase - this is when components are removed from the screen by doing some checking and cleaning up of your code to make it work properly.
 
 3. Demonstrate an understanding of class component lifecycle methods.
+--- `componentDidMount` is used after the first render on the client side and where you used `axios` to request the data and set the state. Then we use `componentDidUpdate` after the render has happened, then we use `useEffect` to specify the states function when it is rendered. Then we call `componentWillUnmount` after the component is unmounted from the DOM.
 
 4. Define stateful logic.
+--- Stateful logic is when any code uses state and using custom hooks allow us to extract the state into a reusable function.
 
 5. Describe how to test a React component with React Testing Library.
+--- writing a code to test a React component is so intimidating.  We need to follow three steps to get a good tests.  We `arrange` our test setting codes that needs tested, then `act` the method or function, and finally with the result of the test, we `assert` and make sure our test returns a passing state. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -54,22 +63,22 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [√] Create a forked copy of this project
+- [√] Add your team lead as collaborator on Github
+- [√] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [√] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
+- [√] Run `npm install` to download dependencies for the server.
+- [√] Run the server using `npm start`.
+- [√] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
 
 **Starting the React app**
 
-- [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-- [ ] Still inside the `client` folder run `npm run start` to run the client application.
-- [ ] Your browser should open up the project as normal
+- [√] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
+- [√] Still inside the `client` folder run `npm run start` to run the client application.
+- [√] Your browser should open up the project as normal
 
 **Starting your test runner**
 
