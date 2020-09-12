@@ -6,7 +6,7 @@ export const useForm = initialValue => {
   
   const [values, setValues] = useState(initialValue);
 
-  // handlechanges for inputs
+  // handlechanges for input
   const handleChanges = (e) => {
     setValues({
       ...values,
