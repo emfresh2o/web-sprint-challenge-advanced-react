@@ -10,7 +10,7 @@ test("form header renders", () => {
 });
 
 test("form shows success message on submit with form details", () => {
-    const { getByLabelText } = render(<CheckoutForm />);
+    const { getByLabelText, getByTestId, getByDisplayValue } = render(<CheckoutForm />);
 
     const firstNameInput = getByLabelText(/first name/i);
     const lastNameInput = getByLabelText(/last name/i);
@@ -33,11 +33,18 @@ test("form shows success message on submit with form details", () => {
     fireEvent.change(stateInput, { target: { value: 'PA' }})
     fireEvent.change(zipInput, { target: { value: '15068' }})
 
+    expect(getByDisplayValue(/Mitch/i)).toBeInTheDocument()
+    expect(getByDisplayValue(/Freshwater/i)).toBeInTheDocument()
+    expect(getByDisplayValue(/2141 Kenneth Avenue/i)).toBeInTheDocument()
+    expect(getByDisplayValue(/Arnold/i)).toBeInTheDocument()
+    expect(getByDisplayValue(/PA/i)).toBeInTheDocument()
+    expect(getByDisplayValue(/15068/i)).toBeInTheDocument()
+    
+    const checkoutSubmit = getByTestId(/submitCheckout/i);
+    expect(checkoutSubmit).toBeInTheDocument();
+    fireEvent.click(checkoutSubmit)
+    
+    const successMessage = getByTestId(/successMessage/i)
+    expect(successMessage).toBeInTheDocument()
+
 });
-
-// test("form shows errors on submit", () => {
-//     const successMessage = getByTestId(/successMessage/i)
-//     expect(successMessage).toBeInTheDocument();
-//     fireEvent.change(message, {target: { value: 'SORRY!'}})
-
-// });
